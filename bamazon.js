@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "mqamar0187",
   database: "bamazon"
 });
 
@@ -30,7 +30,7 @@ function promptCustomerForItem(inventory) {
     .prompt([{
       type: "input",
       name: "choice",
-      message: "What is the ID of the item you would you like to purchase? [Quit with Q]",
+      message: "Enter the ID of the item you would you like to purchase? [Quit with Q]",
       validate: function(val) {
         return !isNaN(val) || val.toLowerCase() === "q";
       }
@@ -42,7 +42,7 @@ function promptCustomerForItem(inventory) {
       if (product) {
         promptCustomerForQuantity(product);
       } else {
-        console.log("\nSorry, that item is not in the inventory.");
+        console.log("\nSorry, we do not carry that item.");
         loadProducts();
       }
     });
